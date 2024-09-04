@@ -357,8 +357,8 @@
 "Assets/Scripts/EnemyAI.cs"
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/HealthUI.cs"
-"Assets/Scripts/PlayerAttack.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/Shuriken.cs"
 -langversion:9.0
 
 /deterministic
