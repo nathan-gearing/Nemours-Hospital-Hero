@@ -7,8 +7,13 @@ public class HealthUI : MonoBehaviour
 {
     public Health playerHealth;
     public Slider healthSlider;
+    public float smoothSpeed = 20f;
+    
+
+   
     void Update()
     {
-        healthSlider.value = playerHealth.currentHealth;
+        healthSlider.value = Mathf.Lerp(healthSlider.value, playerHealth.currentHealth, smoothSpeed * Time.deltaTime);
+       
     }
 }

@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
+    private SpriteRenderer spriteRenderer;
     private float horizontalInput;
     public float speed = 10;
     public float jumpForce = 5;
+    private bool facingRight = true;
 
     //mellee properties
     public int meleeDamage = 20;
@@ -24,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+       
     }
     // Update is called once per frame
     void Update()
@@ -34,12 +39,15 @@ public class PlayerController : MonoBehaviour
 
         }
         horizontalInput = Input.GetAxis("Horizontal");
-        if(horizontalInput > 0)
+        if (horizontalInput != 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-        }else if (horizontalInput < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (horizontalInput > 0 && !facingRight)
+            {
+                Flip();
+            } else if (horizontalInput < 0 && facingRight)
+            {
+                Flip();
+            }
         }
        transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
 
@@ -54,6 +62,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Flip()
+    {
+        facingRight = !facingRight;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
     void MeleeAttack()
     {
         Vector2 attackDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
@@ -62,7 +75,12 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null)
         {
+            Health enemyHealth = hit.collider.GetComponent<Health>();
             Debug.Log("Hit: " + hit.collider.name);
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(meleeDamage);
+            }
         }
         else
         {
