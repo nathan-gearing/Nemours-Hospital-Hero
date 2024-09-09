@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private float horizontalInput;
     public float speed = 10;
     public float jumpForce = 5;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
        
     }
     // Update is called once per frame
@@ -39,9 +41,11 @@ public class PlayerController : MonoBehaviour
 
         }
         horizontalInput = Input.GetAxis("Horizontal");
+        animator.SetBool("isRunning", horizontalInput != 0);
         if (horizontalInput != 0)
         {
-            if (horizontalInput > 0 && !facingRight)
+            
+           if (horizontalInput > 0 && !facingRight)
             {
                 Flip();
             } else if (horizontalInput < 0 && facingRight)
@@ -54,18 +58,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             MeleeAttack();
+            animator.SetTrigger("melee");
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             ThrowShuriken();
+            animator.SetTrigger("throw");
         }
     }
 
     void Flip()
     {
         facingRight = !facingRight;
-        spriteRenderer.flipX = !spriteRenderer.flipX;
+        Vector3 playerScale = transform.localScale;
+        playerScale.x *= -1;
+        transform.localScale = playerScale;
     }
     void MeleeAttack()
     {
@@ -94,13 +102,11 @@ public class PlayerController : MonoBehaviour
         GameObject shuriken = Instantiate(shurikenPrefab, shurikenSpawnPoint.position, shurikenSpawnPoint.rotation);
         Rigidbody2D rb = shuriken.GetComponent<Rigidbody2D>();
 
-        if (transform.localScale.x > 0)
-        {
-            rb.velocity = shurikenSpawnPoint.right * shurikenSpeed;
-        } else
-        {
-            rb.velocity = shurikenSpawnPoint.right * -shurikenSpeed;
-        }
+        Vector2 shurikenDirecton = facingRight ? Vector2.right : Vector2.left;
+        rb.velocity = shurikenDirecton * shurikenSpeed;
+
+        float rotationDirection = transform.localScale.x > 0 ? -300f : 300f;
+        rb.angularVelocity = rotationDirection;
         
     }
 
