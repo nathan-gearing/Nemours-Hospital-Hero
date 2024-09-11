@@ -354,12 +354,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/dev/unity/2022.3.23f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/dev/unity/2022.3.23f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/Collectible.cs"
 "Assets/Scripts/EnemyAI.cs"
-"Assets/Scripts/EnemyUI.cs"
 "Assets/Scripts/Health.cs"
-"Assets/Scripts/HealthUI.cs"
+"Assets/Scripts/Interactable.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Shuriken.cs"
+"Assets/Scripts/UI/EnemyUI.cs"
+"Assets/Scripts/UI/HealthUI.cs"
+"Assets/Scripts/UI/UIManager.cs"
 -langversion:9.0
 
 /deterministic
