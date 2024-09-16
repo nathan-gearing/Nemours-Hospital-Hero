@@ -7,17 +7,17 @@ public class Health : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     private Animator animator;
+    private bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
         currentHealth -= damage;
-        animator.SetTrigger("hit");
         if (currentHealth <= 0)
         {
             Die();
@@ -27,4 +27,6 @@ public class Health : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+   
 }

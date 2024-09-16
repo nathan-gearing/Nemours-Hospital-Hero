@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42ffdca8ab627d44a2b338c9e137f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
+  maxHealth: 50
   currentHealth: 0
 --- !u!114 &2145852703
 MonoBehaviour:
@@ -1542,18 +1542,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2040181, y: 0.23515952}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.37, y: 1.3299999, z: 2.56, w: 0.88}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.54, y: 8.07}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 4.73, y: 5.77}
+    newSize: {x: 4.73, y: 5.77}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.536804, y: 5.872514}
+  m_Size: {x: 4.73, y: 5.77}
   m_EdgeRadius: 0
 --- !u!212 &2145852706
 SpriteRenderer:
@@ -1596,12 +1596,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1079c3d4b1a341f4c9221634825fa3ba, type: 3}
+  m_Sprite: {fileID: -1393002808, guid: 1079c3d4b1a341f4c9221634825fa3ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.73, y: 5.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1709,10 +1709,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2145852707}
-    - target: {fileID: 7378736429611571382, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
-      propertyPath: stopRange
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7378736429611571382, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
       propertyPath: attackRange
       value: 2

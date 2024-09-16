@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -8,20 +10,22 @@ public class EnemyAI : MonoBehaviour
     public float speed = 3.0f;
     public float detectionRange = 10.0f;
     public float attackRange = 1.5f;
-    public float stopRange = 1.5f;
+    public float stopRange = 2.0f;
     public float attackCoolDown = 2.0f;
-    private float nextAttackTime = 0f;
+    public float nextAttackTime = 0f;
     public int damage = 10;
     private Health playerHealth;
-    private Animator animator;
+    private Animator enemyAnimator;
+    private Animator playerAnimator;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
         playerHealth = player.GetComponent<Health>();
-        animator = GetComponent<Animator>();
+        enemyAnimator = GetComponent<Animator>();
+        playerAnimator = player.GetComponent <Animator>();
     }
 
     // Update is called once per frame
@@ -29,41 +33,56 @@ public class EnemyAI : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         float verticalDifference = Mathf.Abs(transform.position.y - player.position.y);
+
         if (distanceToPlayer < detectionRange)
         {
             if (distanceToPlayer > stopRange)
             {
-                Vector3 direction = (player.position - transform.position).normalized;
-                transform.position += direction * speed * Time.deltaTime;
+                MoveTowardsPlayer();
             }
+
+
+
+
 
             if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
             {
                 AttackPlayer();
-                nextAttackTime = Time.time + attackCoolDown; 
+                nextAttackTime = Time.time + attackCoolDown;
             }
-            
+
         }
+
+
+
     }
 
-    void AttackPlayer()
+    private void MoveTowardsPlayer()
     {
-        int randomAttack = Random.Range(0, 3);
+        Vector3 direction = (player.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+    }
+
+    private void AttackPlayer()
+    {
+        int randomAttack = Random.Range(0, 2);
         switch (randomAttack)
         {
             case 0:
-                animator.SetTrigger("attack1");
+                enemyAnimator.SetTrigger("attack1");
                 break;
             case 1:
-                animator.SetTrigger("attack2");
+                enemyAnimator.SetTrigger("attack2");
                 break;
             case 2:
-                animator.SetTrigger("attack3");
+                enemyAnimator.SetTrigger("attack3");
                 break;
+
         }
-        if (playerHealth  != null)
+        if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
+            playerAnimator.SetTrigger("hit");
         }
     }
 

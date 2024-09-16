@@ -43,11 +43,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.2993245, y: 0.4617142}
   spritePixelsToUnits: 100
   spriteBorder: {x: 37, y: 133, z: 256, w: 88}
   spriteGenerateFallbackPhysicsShape: 1
@@ -95,7 +95,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MN_NINJA2_Idle_000_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 139
+        width: 473
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8de9c727a5e1924eb347f57501671dc
+      internalID: -1393002808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline:
     - - {x: -303, y: 314.5}
       - {x: -342, y: 302.5}
@@ -114,7 +135,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MN_NINJA2_Idle_000_0: -1393002808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
