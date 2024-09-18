@@ -41,15 +41,15 @@ public class EnemyAI : MonoBehaviour
                 MoveTowardsPlayer();
             }
 
-
-
-
-
             if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
-            {
-                AttackPlayer();
-                nextAttackTime = Time.time + attackCoolDown;
-            }
+                        {
+                            AttackPlayer();
+                            nextAttackTime = Time.time + attackCoolDown;
+                        }
+
+
+
+            
 
         }
 

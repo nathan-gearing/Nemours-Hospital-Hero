@@ -6,7 +6,12 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
+    
 
+    private void Start()
+    {
+        
+    }
     private IEnumerator showForDuration(string message, float duration)
     {
         Debug.Log("started routine");

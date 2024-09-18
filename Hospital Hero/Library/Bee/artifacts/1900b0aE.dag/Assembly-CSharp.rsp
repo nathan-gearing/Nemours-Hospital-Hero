@@ -356,6 +356,7 @@
 -analyzer:"C:/dev/unity/2022.3.23f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Collectible.cs"
 "Assets/Scripts/EnemyAI.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/Interactable.cs"
 "Assets/Scripts/PlayerController.cs"
