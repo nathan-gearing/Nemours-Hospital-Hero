@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5629195a5113194ca8e886203bae9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 3266131709198549562, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
   healthSlider: {fileID: 4411070701935571969}
   smoothSpeed: 20
 --- !u!1 &8803522051600422937

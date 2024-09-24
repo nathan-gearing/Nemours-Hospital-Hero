@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1513208161331010658}
   - component: {fileID: 3767334628492084532}
   - component: {fileID: 193108728141310758}
-  - component: {fileID: 129171081509644354}
   - component: {fileID: 9116581336874148929}
+  - component: {fileID: 5956920752010522571}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,20 +186,6 @@ MonoBehaviour:
   shurikenPrefab: {fileID: 8629637755336338924, guid: 02da4e63fd7cc2d4d91fdd43d9377065, type: 3}
   shurikenSpawnPoint: {fileID: 1952966535464867941}
   shurikenSpeed: 20
---- !u!114 &129171081509644354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3068601321419289223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42ffdca8ab627d44a2b338c9e137f72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 0
 --- !u!95 &9116581336874148929
 Animator:
   serializedVersion: 5
@@ -221,6 +207,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5956920752010522571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068601321419289223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e84e1db5e9324e87c723e39b088f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &3212493545546276588
 GameObject:
   m_ObjectHideFlags: 0

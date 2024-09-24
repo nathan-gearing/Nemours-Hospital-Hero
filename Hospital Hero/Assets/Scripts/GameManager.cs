@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     private Animator playerAnimator;
     private PlayerController playerController;
     private EnemyAI enemyAi;
+    private Health playerHealth;
     public float deathAnimationDuration = 3.0f;
     private const string LevelKey = "CurrentLevel";
+   
     public int currentLevel;
     
     
@@ -26,11 +28,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
             Debug.Log("PlayerPrefs init to 0");
         }
+        
         currentLevel = PlayerPrefs.GetInt(LevelKey);
         Debug.Log("Starting Level at: " + currentLevel);
         playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         enemyAi = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyAI>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
         if (SceneManager.GetActiveScene().buildIndex != currentLevel)
         {
@@ -40,6 +44,8 @@ public class GameManager : MonoBehaviour
     }
 public void LoadLevel(int levelIndex)
     {
+
+        playerHealth.SavePlayerHealth();
         Debug.Log("Setting level to: " + levelIndex);
         PlayerPrefs.SetInt(LevelKey, levelIndex);
         PlayerPrefs.Save();
@@ -65,6 +71,9 @@ public void LoadLevel(int levelIndex)
         {
             ResetGameToLevel0();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) LoadLevel(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) LoadLevel(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) LoadLevel(2);
     }
 
     public void TriggerPlayerDeath()
@@ -83,13 +92,13 @@ public void LoadLevel(int levelIndex)
         
         Destroy(playerController.gameObject);
         
-        currentLevel = PlayerPrefs.GetInt(LevelKey);
         SceneManager.LoadScene(currentLevel);
     }
 
     public void ResetGameToLevel0()
     {
         PlayerPrefs.SetInt(LevelKey, 0);
+        PlayerPrefs.DeleteKey("PlayerHealth");
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }
