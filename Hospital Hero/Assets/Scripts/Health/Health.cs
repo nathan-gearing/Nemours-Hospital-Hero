@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class Health : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
-    private Animator animator;
+    private Animator enemyAnimator;
     private bool isDead = false;
     private GameManager gM;
     private const string HealthKey = "PlayerHealth";
@@ -31,12 +32,23 @@ public class Health : MonoBehaviour
         }
         
         gM = FindObjectOfType<GameManager>();
+
+        enemyAnimator = gameObject.GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
     {
         if (isDead) return;
         currentHealth -= damage;
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if (!enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("hit"))
+            {
+                enemyAnimator.SetTrigger("hit");
+                
+            }
+            
+        }
         if (currentHealth <= 0)
         {
             Die();

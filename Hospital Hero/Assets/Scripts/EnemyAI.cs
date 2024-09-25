@@ -17,6 +17,9 @@ public class EnemyAI : MonoBehaviour
     private Health playerHealth;
     private Animator enemyAnimator;
     private Animator playerAnimator;
+    private bool isFacingRight = true;
+    public Transform healthBar;
+    
 
 
     // Start is called before the first frame update
@@ -34,37 +37,45 @@ public class EnemyAI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         float verticalDifference = Mathf.Abs(transform.position.y - player.position.y);
 
+        FlipTowardsPlayer();
+        
         if (distanceToPlayer < detectionRange)
         {
             if (distanceToPlayer > stopRange)
             {
                 MoveTowardsPlayer();
             }
+            else
+            {
+                enemyAnimator.SetBool("isRunning", false);
+            }
 
             if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
-                        {
-                            AttackPlayer();
-                            nextAttackTime = Time.time + attackCoolDown;
-                        }
-
-
-
-            
-
+            {
+                AttackPlayer();
+                nextAttackTime = Time.time + attackCoolDown;
+            }
+        }else
+        {
+            enemyAnimator.SetBool("isRunning", false);
         }
 
 
 
     }
 
+
+
     private void MoveTowardsPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
+        enemyAnimator.SetBool("isRunning", true);
     }
 
     private void AttackPlayer()
     {
+        enemyAnimator.SetBool("isRunning", false);
         int randomAttack = Random.Range(0, 2);
         switch (randomAttack)
         {
@@ -86,6 +97,44 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private void FlipTowardsPlayer()
+    {
+        if (player.position.x > transform.position.x && isFacingRight)
+        {
+            Flip();
+        }
+        else if (player.position.x < transform.position.x && !isFacingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+
+        if (healthBar != null)
+        {
+            Vector3 healthBarScale = healthBar.transform.localScale;
+            healthBarScale.x = .003f;
+            
+            if (localScale.x < 0)
+            {
+                healthBarScale.x *= -1;
+            }
+            else
+            {
+                healthBarScale.x = Mathf.Abs(healthBarScale.x);
+            }
+           
+            healthBar.transform.localScale = healthBarScale;
+        }
+       
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

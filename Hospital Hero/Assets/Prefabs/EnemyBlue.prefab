@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 36459059, guid: 82f76b1906655b64aa65b8773a9355b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98e84e1db5e9324e87c723e39b088f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 50
   currentHealth: 0
 --- !u!114 &7378736429611571382
 MonoBehaviour:
@@ -145,11 +145,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   detectionRange: 10
-  attackRange: 1.5
+  attackRange: 2
   stopRange: 2
   attackCoolDown: 2
   nextAttackTime: 0
   damage: 10
+  healthBar: {fileID: 4587109533443297093}
 --- !u!61 &1259599940347379242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224,6 +225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4894018223896028664}
     m_Modifications:
+    - target: {fileID: 3651714379807141281, guid: 61f8a9067e7dae44cb8bff7f0b2f4c47, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4171887916577455870, guid: 61f8a9067e7dae44cb8bff7f0b2f4c47, type: 3}
       propertyPath: m_Name
       value: EnemyCanvas

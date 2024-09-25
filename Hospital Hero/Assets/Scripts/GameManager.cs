@@ -84,7 +84,11 @@ public void LoadLevel(int levelIndex)
     private IEnumerator PlayerDeath()
     {
         playerController.enabled = false;
-        enemyAi.enabled = false;
+        if (enemyAi != null)
+        {
+            enemyAi.enabled = false;
+        }
+            
 
         playerAnimator.SetTrigger("dead");
 
