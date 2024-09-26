@@ -14,11 +14,13 @@ public class EnemyAI : MonoBehaviour
     public float attackCoolDown = 2.0f;
     public float nextAttackTime = 0f;
     public int damage = 10;
+    private float deathAnimationDuration = .8f;
     private Health playerHealth;
     private Animator enemyAnimator;
     private Animator playerAnimator;
     private bool isFacingRight = true;
     public Transform healthBar;
+    private Health enemyHealth;
     
 
 
@@ -29,39 +31,43 @@ public class EnemyAI : MonoBehaviour
         playerHealth = player.GetComponent<Health>();
         enemyAnimator = GetComponent<Animator>();
         playerAnimator = player.GetComponent <Animator>();
+        enemyHealth = GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        float verticalDifference = Mathf.Abs(transform.position.y - player.position.y);
-
-        FlipTowardsPlayer();
-        
-        if (distanceToPlayer < detectionRange)
+        if (!enemyHealth.isDead)
         {
-            if (distanceToPlayer > stopRange)
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float verticalDifference = Mathf.Abs(transform.position.y - player.position.y);
+
+            FlipTowardsPlayer();
+
+            if (distanceToPlayer < detectionRange)
             {
-                MoveTowardsPlayer();
+                if (distanceToPlayer > stopRange)
+                {
+                    MoveTowardsPlayer();
+                }
+                else
+                {
+                    enemyAnimator.SetBool("isRunning", false);
+                }
+
+                if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
+                {
+                    AttackPlayer();
+                    nextAttackTime = Time.time + attackCoolDown;
+                }
             }
             else
             {
                 enemyAnimator.SetBool("isRunning", false);
             }
 
-            if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
-            {
-                AttackPlayer();
-                nextAttackTime = Time.time + attackCoolDown;
-            }
-        }else
-        {
-            enemyAnimator.SetBool("isRunning", false);
+
         }
-
-
-
     }
 
 
@@ -75,25 +81,28 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        enemyAnimator.SetBool("isRunning", false);
-        int randomAttack = Random.Range(0, 2);
-        switch (randomAttack)
+        if (!enemyHealth.isDead)
         {
-            case 0:
-                enemyAnimator.SetTrigger("attack1");
-                break;
-            case 1:
-                enemyAnimator.SetTrigger("attack2");
-                break;
-            case 2:
-                enemyAnimator.SetTrigger("attack3");
-                break;
+            enemyAnimator.SetBool("isRunning", false);
+            int randomAttack = Random.Range(0, 2);
+            switch (randomAttack)
+            {
+                case 0:
+                    enemyAnimator.SetTrigger("attack1");
+                    break;
+                case 1:
+                    enemyAnimator.SetTrigger("attack2");
+                    break;
+                case 2:
+                    enemyAnimator.SetTrigger("attack3");
+                    break;
 
-        }
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(damage);
-            playerAnimator.SetTrigger("hit");
+            }
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+                playerAnimator.SetTrigger("hit");
+            }
         }
     }
 
@@ -134,6 +143,22 @@ public class EnemyAI : MonoBehaviour
             healthBar.transform.localScale = healthBarScale;
         }
        
+    }
+
+    public void TriggerEnemyDeath()
+    {
+        StartCoroutine(EnemyDeath());
+    }
+
+    private IEnumerator EnemyDeath()
+    {
+        enemyAnimator.SetTrigger("dead");
+        Debug.Log("Starting coroutine at: " + deathAnimationDuration);
+
+        yield return new WaitForSeconds(deathAnimationDuration);
+
+        Debug.Log("destroying now");
+        Destroy(gameObject);
     }
     private void OnDrawGizmosSelected()
     {

@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1426511034, guid: 91feba605419eff47965b82b39854665, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -150,6 +150,7 @@ MonoBehaviour:
   attackCoolDown: 2
   nextAttackTime: 0
   damage: 30
+  healthBar: {fileID: 4587109533443297093}
 --- !u!61 &1259599940347379242
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,8 +9,9 @@ public class Health : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     private Animator enemyAnimator;
-    private bool isDead = false;
+    public bool isDead = false;
     private GameManager gM;
+    private EnemyAI enemy;
     private const string HealthKey = "PlayerHealth";
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,8 @@ public class Health : MonoBehaviour
         
         gM = FindObjectOfType<GameManager>();
 
-        enemyAnimator = gameObject.GetComponent<Animator>();
+        enemyAnimator = GetComponent<Animator>();
+        enemy = GetComponent<EnemyAI>();
     }
 
     public void TakeDamage(int damage)
@@ -78,7 +80,7 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.CompareTag("Enemy"))
         {
-             Destroy(gameObject);
+            enemy.TriggerEnemyDeath();
         }
     }
 

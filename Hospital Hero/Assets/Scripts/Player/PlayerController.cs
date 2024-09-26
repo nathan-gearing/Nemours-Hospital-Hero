@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float jumpForce = 5;
     private bool facingRight = true;
+
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.1f;
+    public LayerMask groundlayer;
+    private bool isGrounded;
 
     //mellee properties
     public int meleeDamage = 20;
@@ -35,36 +41,73 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Space)) {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundlayer);
+        animator.SetBool("isGrounded", isGrounded);
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
             
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
-        }
-        horizontalInput = Input.GetAxis("Horizontal");
-        animator.SetBool("isRunning", horizontalInput != 0);
-        if (horizontalInput != 0)
-        {
             
-           if (horizontalInput > 0 && !facingRight)
+
+        }
+
+        HandleJump();
+
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (isGrounded)
+        {
+
+            animator.SetBool("isRunning", horizontalInput != 0);
+        }
+            if (horizontalInput != 0)
             {
-                Flip();
-            } else if (horizontalInput < 0 && facingRight)
-            {
-                Flip();
+
+                if (horizontalInput > 0 && !facingRight)
+                {
+                    Flip();
+                }
+                else if (horizontalInput < 0 && facingRight)
+                {
+                    Flip();
+                }
             }
-        }
-       transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
+        
+            transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            MeleeAttack();
-            animator.SetTrigger("melee");
-        }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                MeleeAttack();
+                animator.SetTrigger("melee");
+            }
 
-        if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                ThrowShuriken();
+                animator.SetTrigger("throw");
+            }
+        
+    }
+
+    private void HandleJump()
+    {
+        float verticalVelocity = playerRb.velocity.y;
+
+        if (verticalVelocity > 0.1 && !isGrounded)
         {
-            ThrowShuriken();
-            animator.SetTrigger("throw");
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isFalling", false);
+        }
+        else if (verticalVelocity < -0.1 && !isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
+        }
+        else if (isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
         }
     }
 
@@ -117,5 +160,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 attackDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
         Gizmos.DrawLine(attackPoint.position, attackPoint.position + (Vector3)attackDirection * attackRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
