@@ -15,12 +15,19 @@ public class EnemyAI : MonoBehaviour
     public float nextAttackTime = 0f;
     public int damage = 10;
     private float deathAnimationDuration = .8f;
+    public float minDistanceFromOtherEnemmies = 1.5f;
+    public LayerMask enemyLayerMask;
     private Health playerHealth;
     private Animator enemyAnimator;
     private Animator playerAnimator;
     private bool isFacingRight = true;
     public Transform healthBar;
     private Health enemyHealth;
+    public GameObject bubblePrefab;
+    public float spawnRadius = 1f;
+    public int minBubbles = 15;
+    public int maxBubbles = 20;
+    public float spawnDelay = 0.05f;
     
 
 
@@ -37,7 +44,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!enemyHealth.isDead)
+        if (!enemyHealth.isDead && !enemyHealth.isTakingDamage)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             float verticalDifference = Mathf.Abs(transform.position.y - player.position.y);
@@ -46,7 +53,7 @@ public class EnemyAI : MonoBehaviour
 
             if (distanceToPlayer < detectionRange)
             {
-                if (distanceToPlayer > stopRange)
+                if (distanceToPlayer > stopRange && !IsTooCloseToOtherEnemies())
                 {
                     MoveTowardsPlayer();
                 }
@@ -55,7 +62,7 @@ public class EnemyAI : MonoBehaviour
                     enemyAnimator.SetBool("isRunning", false);
                 }
 
-                if (distanceToPlayer <= attackRange && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
+                if (distanceToPlayer <= attackRange && !enemyHealth.isTakingDamage && verticalDifference <= 1.0f && Time.time >= nextAttackTime)
                 {
                     AttackPlayer();
                     nextAttackTime = Time.time + attackCoolDown;
@@ -70,7 +77,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
+    private bool IsTooCloseToOtherEnemies()
+    {
+        Collider[] enemiesNearby = Physics.OverlapSphere(transform.position, minDistanceFromOtherEnemmies, enemyLayerMask);
+        return enemiesNearby.Length > 1;
+    }
 
     private void MoveTowardsPlayer()
     {
@@ -152,13 +163,29 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator EnemyDeath()
     {
+        int randomBubleCount = Random.Range(minBubbles, maxBubbles);
+
+        StartCoroutine(SpawnBubblesWithDelay(randomBubleCount));
+        
+        while (enemyAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        {
+            yield return null;
+        }
+
         enemyAnimator.SetTrigger("dead");
         Debug.Log("Starting coroutine at: " + deathAnimationDuration);
-
         yield return new WaitForSeconds(deathAnimationDuration);
-
-        Debug.Log("destroying now");
         Destroy(gameObject);
+    }
+
+    IEnumerator SpawnBubblesWithDelay(int bubbleCount)
+    {
+        for (int i = 0; i < bubbleCount; ++i)
+        {
+            Vector3 spawnPos = transform.position + Random.insideUnitSphere * spawnRadius;
+            Instantiate(bubblePrefab , spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(spawnDelay);
+        }
     }
     private void OnDrawGizmosSelected()
     {
@@ -168,5 +195,9 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRange);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, stopRange);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, minDistanceFromOtherEnemmies);
     }
+
+   
 }

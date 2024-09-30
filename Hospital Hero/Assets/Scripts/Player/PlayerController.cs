@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
 
             animator.SetBool("isRunning", horizontalInput != 0);
-        }
+        } 
             if (horizontalInput != 0)
             {
 
@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                MeleeAttack();
+                //MeleeAttack();
                 animator.SetTrigger("melee");
             }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                ThrowShuriken();
+                //ThrowShuriken();
                 animator.SetTrigger("throw");
             }
         

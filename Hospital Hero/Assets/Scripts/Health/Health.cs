@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     private GameManager gM;
     private EnemyAI enemy;
     private const string HealthKey = "PlayerHealth";
+    public bool isTakingDamage = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         if (gameObject.CompareTag("Enemy"))
         {
+            isTakingDamage = true;
             if (!enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("hit"))
             {
                 enemyAnimator.SetTrigger("hit");
@@ -55,6 +57,11 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void ResetDamageState()
+    {
+        isTakingDamage = false;
     }
 
     public void RestoreHealth(int amount)
