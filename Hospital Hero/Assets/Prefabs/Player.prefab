@@ -223,6 +223,14 @@ MonoBehaviour:
   shurikenPrefab: {fileID: 8629637755336338924, guid: 02da4e63fd7cc2d4d91fdd43d9377065, type: 3}
   shurikenSpawnPoint: {fileID: 1952966535464867941}
   shurikenSpeed: 20
+  maxSoap: 5
+  soapReloadTime: 3
+  soapUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &9116581336874148929
 Animator:
   serializedVersion: 5
@@ -259,6 +267,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   isDead: 0
+  isTakingDamage: 0
 --- !u!1 &3212493545546276588
 GameObject:
   m_ObjectHideFlags: 0

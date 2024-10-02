@@ -6,16 +6,19 @@ public class Bubble : MonoBehaviour
 {
     public float minRiseSpeed = .1f;
     public float maxRiseSpeed = 1f;
-    public float lifeTime = 2f;
+    public float minLifeTime = .2f;
+    public float maxLifeTime = .5f;
 
     private Animator animator;
     private float riseSpeed;
+    private float lifeTime;
     
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         riseSpeed = Random.Range(minRiseSpeed, maxRiseSpeed);
+        lifeTime = Random.Range(minLifeTime, maxLifeTime);
         StartCoroutine(BubbleRise());
     }
 

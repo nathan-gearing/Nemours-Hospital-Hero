@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &138303551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6095141812095624298, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 1418569941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &225457427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5535482818177724122, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 1418569941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &274759284
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +425,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &840876412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8095153828046627089, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 1418569941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +692,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4312092564f71428901ef11fb381c9, type: 3}
+--- !u!1 &1600462941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5837309911672040287, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 1418569941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1669223558 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 980744022392812228, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
@@ -754,6 +774,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d781720f41ba3494b9dca7a3e230a5c3, type: 3}
+--- !u!1 &2078378792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3001538482691156207, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 1418569941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2145852707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 137006141051199244, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
@@ -936,6 +961,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 2078378792}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 225457427}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[2]
+      value: 
+      objectReference: {fileID: 840876412}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[3]
+      value: 
+      objectReference: {fileID: 138303551}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[4]
+      value: 
+      objectReference: {fileID: 1600462941}
     - target: {fileID: 3068601321419289223, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: m_Name
       value: Player

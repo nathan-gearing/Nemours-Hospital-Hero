@@ -365,6 +365,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &337694224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5837309911672040287, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &337694225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6095141812095624298, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &337694226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8095153828046627089, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &337694227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5535482818177724122, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &337694228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3001538482691156207, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717581520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,6 +1053,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 337694228}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 337694227}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[2]
+      value: 
+      objectReference: {fileID: 337694226}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[3]
+      value: 
+      objectReference: {fileID: 337694225}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: soapUI.Array.data[4]
+      value: 
+      objectReference: {fileID: 337694224}
     - target: {fileID: 3068601321419289223, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: m_Name
       value: Player

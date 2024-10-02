@@ -30,12 +30,21 @@ public class PlayerController : MonoBehaviour
     public GameObject shurikenPrefab;
     public Transform shurikenSpawnPoint;
     public float shurikenSpeed = 10f;
+    public int maxSoap = 5;
+    private int availableSoap;
+    public float soapReloadTime;
+    private float[] soapCooldownTimers;
+
+    public GameObject[] soapUI;
 
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        availableSoap = maxSoap;
+        soapCooldownTimers = new float[maxSoap];
+        UpdateSoapUI();
        
     }
     // Update is called once per frame
@@ -44,7 +53,19 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundlayer);
         animator.SetBool("isGrounded", isGrounded);
 
-
+        for (int i = 0; i < maxSoap; i++)
+        {
+            if (soapCooldownTimers[i] > 0)
+            {
+                soapCooldownTimers[i] -= Time.deltaTime;
+                if (soapCooldownTimers[i] <= 0)
+                {
+                    availableSoap++;
+                    UpdateSoapUI();
+                }
+            }
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
             
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -82,10 +103,11 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("melee");
             }
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && availableSoap > 0)
             {
-                //ThrowShuriken();
-                animator.SetTrigger("throw");
+                ThrowSoap();
+                
+
             }
         
     }
@@ -140,19 +162,51 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void ThrowShuriken()
+    void ThrowSoap()
     {
-        GameObject shuriken = Instantiate(shurikenPrefab, shurikenSpawnPoint.position, shurikenSpawnPoint.rotation);
-        Rigidbody2D rb = shuriken.GetComponent<Rigidbody2D>();
+            if (availableSoap > 0)
+        {
+            availableSoap--;
 
-        Vector2 shurikenDirecton = facingRight ? Vector2.right : Vector2.left;
-        rb.velocity = shurikenDirecton * shurikenSpeed;
+            for(int i = 0; i < maxSoap; i++)
+            {
+                if (soapCooldownTimers[i] <= 0)
+                {
+                    soapCooldownTimers[i] = soapReloadTime;
+                    break;
+                }
+            }
+        }
+        
+            GameObject shuriken = Instantiate(shurikenPrefab, shurikenSpawnPoint.position, shurikenSpawnPoint.rotation);
+            Rigidbody2D rb = shuriken.GetComponent<Rigidbody2D>();
 
-        float rotationDirection = transform.localScale.x > 0 ? -300f : 300f;
-        rb.angularVelocity = rotationDirection;
+            Vector2 shurikenDirecton = facingRight ? Vector2.right : Vector2.left;
+            rb.velocity = shurikenDirecton * shurikenSpeed;
+
+            float rotationDirection = transform.localScale.x > 0 ? -300f : 300f;
+            rb.angularVelocity = rotationDirection;
+
+        UpdateSoapUI();
         
     }
 
+    
+
+    void UpdateSoapUI()
+    {
+        for (int i = 0; i < maxSoap; i++)
+        {
+            if (i < availableSoap)
+            {
+                soapUI[i].SetActive(true);
+            }
+            else
+            {
+                soapUI[i].SetActive(false);
+            }
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
