@@ -180,10 +180,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  jumpForce: 5
+  jumpForce: 15
   groundCheck: {fileID: 5070438690134719350}
   groundCheckRadius: 0.1
   groundlayer:
@@ -231,6 +231,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  bounceForce: 7
+  bounceDamage: 10
 --- !u!95 &9116581336874148929
 Animator:
   serializedVersion: 5

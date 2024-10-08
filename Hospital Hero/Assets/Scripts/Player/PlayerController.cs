@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private float[] soapCooldownTimers;
 
     public GameObject[] soapUI;
+    public float bounceForce = 10f;
+    public int bounceDamage = 10;
 
     private void Start()
     {
@@ -204,6 +206,24 @@ public class PlayerController : MonoBehaviour
             else
             {
                 soapUI[i].SetActive(false);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            ContactPoint2D[] contacts = new ContactPoint2D[collision.contactCount];
+            collision.GetContacts(contacts);
+
+            foreach (ContactPoint2D contact in contacts)
+            {
+                if (contact.normal.y > 0.5f)
+                {
+                    playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
+                    collision.gameObject.GetComponent<Health>().TakeDamage(bounceDamage);
+                }
             }
         }
     }

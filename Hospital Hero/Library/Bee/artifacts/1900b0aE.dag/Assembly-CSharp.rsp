@@ -361,6 +361,7 @@
 "Assets/Scripts/Interactables/Collectible.cs"
 "Assets/Scripts/Interactables/Door.cs"
 "Assets/Scripts/Interactables/Interactable.cs"
+"Assets/Scripts/MusicPlayer.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/Shuriken.cs"
 "Assets/Scripts/UI/EnemyUI.cs"
