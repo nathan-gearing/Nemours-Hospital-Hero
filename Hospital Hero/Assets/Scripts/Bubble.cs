@@ -10,6 +10,8 @@ public class Bubble : MonoBehaviour
     public float maxLifeTime = .5f;
 
     private Animator animator;
+    private AudioSource audioSource;
+    public AudioClip popSound;
     private float riseSpeed;
     private float lifeTime;
     
@@ -17,6 +19,7 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         riseSpeed = Random.Range(minRiseSpeed, maxRiseSpeed);
         lifeTime = Random.Range(minLifeTime, maxLifeTime);
         StartCoroutine(BubbleRise());
@@ -38,6 +41,10 @@ public class Bubble : MonoBehaviour
     }
 
     public void BubblePop()
+    {
+        audioSource.PlayOneShot(popSound);
+    }
+    private void BubbleDestroy()
     {
         Destroy(gameObject);
     }

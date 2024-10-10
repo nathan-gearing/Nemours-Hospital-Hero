@@ -8,7 +8,9 @@ public abstract class Interactable : MonoBehaviour
 {
     public float interactionDistance = 2f;
     public string interactPrompt = "Press I to interact";
+    public GameObject promptCanvas;
     public TextMeshProUGUI promptText;
+    //public GameObject promptInstance;
     private bool isInteracted = false;
     
     public Transform playerTransform;
@@ -16,9 +18,39 @@ public abstract class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        promptText.text = " ";
+        //promptText.text = " ";
+        if (promptCanvas != null)
+        {
+            //promptInstance = Instantiate(promptCanvas, transform);
+            promptText = promptInstance.GetComponent<TextMeshProUGUI>();
+            if (promptText != null )
+            {
+                promptInstance.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("prompt text not found");
+            }
+           
+        }
+        else
+        {
+            Debug.LogError("Canvas not found");
+        }
+
+        if (playerTransform == null)
+        {
+            Debug.LogError("no player found");
+        }
+
     }
 
+    /*void Update()
+    {
+        if (promptInstance == null || promptText == null) return;
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
+        Debug.Log("Distance to player: " + distance);
+    }*/
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +61,7 @@ public abstract class Interactable : MonoBehaviour
 
             if (distance <= interactionDistance) 
             {
+                promptInstance.SetActive(true);
                 promptText.text = GetInteractPrompt();
 
                 if (Input.GetKeyDown(KeyCode.I))
@@ -38,7 +71,7 @@ public abstract class Interactable : MonoBehaviour
             }
             else
             {
-                promptText.text = " ";
+                promptInstance.SetActive(false);
             }
         }
     }
