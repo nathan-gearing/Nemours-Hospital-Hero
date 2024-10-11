@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float jumpForce = 5;
     private bool facingRight = true;
+   
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.1f;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] soapUI;
     public float bounceForce = 10f;
     public int bounceDamage = 10;
+    public float knockbackForce = 10f;
 
     private void Start()
     {
@@ -96,9 +98,9 @@ public class PlayerController : MonoBehaviour
                     Flip();
                 }
             }
-        
-            transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
 
+        transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
+        
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //MeleeAttack();
@@ -209,6 +211,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+   
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -223,6 +226,19 @@ public class PlayerController : MonoBehaviour
                 {
                     playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
                     collision.gameObject.GetComponent<Health>().TakeDamage(bounceDamage);
+
+                    Vector2 knockbackDirection;
+                    if (transform.position.x > collision.transform.position.x)
+                    {
+                        knockbackDirection = new Vector2(knockbackForce, playerRb.velocity.y);
+                    }
+                    else
+                    {
+                        knockbackDirection = new Vector2(-knockbackForce, playerRb.velocity.y);
+                    }
+
+                    playerRb.velocity = knockbackDirection;
+                   
                 }
             }
         }

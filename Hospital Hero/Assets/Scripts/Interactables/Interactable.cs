@@ -10,7 +10,7 @@ public abstract class Interactable : MonoBehaviour
     public string interactPrompt = "Press I to interact";
     public GameObject promptCanvas;
     public TextMeshProUGUI promptText;
-    //public GameObject promptInstance;
+    
     private bool isInteracted = false;
     
     public Transform playerTransform;
@@ -21,11 +21,11 @@ public abstract class Interactable : MonoBehaviour
         //promptText.text = " ";
         if (promptCanvas != null)
         {
-            //promptInstance = Instantiate(promptCanvas, transform);
-            promptText = promptInstance.GetComponent<TextMeshProUGUI>();
+            
             if (promptText != null )
             {
-                promptInstance.SetActive(false);
+                promptText.text = " ";
+                promptText.gameObject.SetActive(false);
             }
             else
             {
@@ -54,6 +54,7 @@ public abstract class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (promptText == null) return;
         if (!isInteracted)
         {
             float distance = Vector3.Distance(playerTransform.position, transform.position);
@@ -61,7 +62,7 @@ public abstract class Interactable : MonoBehaviour
 
             if (distance <= interactionDistance) 
             {
-                promptInstance.SetActive(true);
+                promptText.gameObject.SetActive(true);
                 promptText.text = GetInteractPrompt();
 
                 if (Input.GetKeyDown(KeyCode.I))
@@ -71,7 +72,7 @@ public abstract class Interactable : MonoBehaviour
             }
             else
             {
-                promptInstance.SetActive(false);
+                promptText.gameObject.SetActive(false);
             }
         }
     }
