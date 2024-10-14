@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float jumpForce = 5;
     private bool facingRight = true;
+    public float maxSpeed = 10f;
    
 
     public Transform groundCheck;
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour
     public float bounceForce = 10f;
     public int bounceDamage = 10;
     public float knockbackForce = 10f;
+    public float knockBackDuration = 0.5f;
+    private float knockBackTimer;
+    private bool isKnockedBack = false;
 
     private void Start()
     {
@@ -78,32 +82,23 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleJump();
-
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (isGrounded)
+        
+        if (isKnockedBack)
         {
-
-            animator.SetBool("isRunning", horizontalInput != 0);
-        } 
-            if (horizontalInput != 0)
+            knockBackTimer -= Time.deltaTime;
+            if (knockBackTimer <= 0)
             {
-
-                if (horizontalInput > 0 && !facingRight)
-                {
-                    Flip();
-                }
-                else if (horizontalInput < 0 && facingRight)
-                {
-                    Flip();
-                }
+                isKnockedBack = false;
             }
-
-        transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
+        }
+        else
+        {
+            HandleMovement();
+        }
         
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //MeleeAttack();
+                
                 animator.SetTrigger("melee");
             }
 
@@ -116,6 +111,34 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void HandleMovement()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (isGrounded)
+        {
+
+            animator.SetBool("isRunning", horizontalInput != 0);
+        }
+        if (horizontalInput != 0)
+        {
+
+            if (horizontalInput > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (horizontalInput < 0 && facingRight)
+            {
+                Flip();
+            }
+        }
+
+        playerRb.AddForce(new Vector2(horizontalInput * speed, 0), ForceMode2D.Force);
+
+        if (Mathf.Abs(playerRb.velocity.x) > maxSpeed)
+        {
+            playerRb.velocity = new Vector2(Mathf.Sign(playerRb.velocity.x) * maxSpeed, playerRb.velocity.y);
+        }
+    }
     private void HandleJump()
     {
         float verticalVelocity = playerRb.velocity.y;
@@ -227,21 +250,21 @@ public class PlayerController : MonoBehaviour
                     playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
                     collision.gameObject.GetComponent<Health>().TakeDamage(bounceDamage);
 
-                    Vector2 knockbackDirection;
-                    if (transform.position.x > collision.transform.position.x)
-                    {
-                        knockbackDirection = new Vector2(knockbackForce, playerRb.velocity.y);
-                    }
-                    else
-                    {
-                        knockbackDirection = new Vector2(-knockbackForce, playerRb.velocity.y);
-                    }
-
-                    playerRb.velocity = knockbackDirection;
+                    Vector2 knockbackDirection = transform.position.x > collision.transform.position.x ? Vector2.right : Vector2.left; 
+                    ApplyKnockBack(knockbackDirection);
                    
                 }
             }
         }
+    }
+
+    public void ApplyKnockBack(Vector2 direction)
+    {
+        isKnockedBack = true;
+        knockBackTimer = knockBackDuration;
+        //playerRb.velocity = Vector2.zero;
+
+        playerRb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
     }
     private void OnDrawGizmosSelected()
     {

@@ -954,7 +954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894018223896028664, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7271703
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4894018223896028664, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -986,6 +986,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894018223896028664, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088278108478660172, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088278108478660172, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088278108478660172, guid: 7b7ce3fbfc857dd4c92b47b83f03ccbc, type: 3}
+      propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1043,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: knockbackForce
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: knockBackDuration
@@ -1072,6 +1084,26 @@ PrefabInstance:
     - target: {fileID: 3068601321419289223, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767334628492084532, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: m_Mass
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767334628492084532, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767334628492084532, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767334628492084532, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767334628492084532, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -132,7 +132,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3068601321419289223}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b2c7bb79fdc11a54f8722dbcaefaa7c3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -180,9 +180,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -191,9 +191,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &193108728141310758
 MonoBehaviour:
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   jumpForce: 15
+  maxSpeed: 10
   groundCheck: {fileID: 5070438690134719350}
   groundCheckRadius: 0.1
   groundlayer:
@@ -233,6 +234,8 @@ MonoBehaviour:
   - {fileID: 0}
   bounceForce: 7
   bounceDamage: 10
+  knockbackForce: 10
+  knockBackDuration: 0.5
 --- !u!95 &9116581336874148929
 Animator:
   serializedVersion: 5
