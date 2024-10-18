@@ -37,6 +37,12 @@ public class PlayerController : MonoBehaviour
     public float soapReloadTime;
     private float[] soapCooldownTimers;
 
+    public GameObject giantSoapPrefab;
+    public GameObject giantSoapUI;
+    public bool hasGiantSoap = false;
+    public float giantSoapSpeed = 10f;
+    public Transform giantSoapSpawn;
+
     public GameObject[] soapUI;
     public float bounceForce = 10f;
     public int bounceDamage = 10;
@@ -74,6 +80,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+        if (Input.GetKeyDown(KeyCode.G) && hasGiantSoap)
+        {
+            ThrowGiantSoap();
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
             
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -111,6 +122,41 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Giant Soap"))
+        {
+            hasGiantSoap = true;
+            UpdateSoapUI(true);
+            FindObjectOfType<GameManager>().SaveGiantSoapStatus(true);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    void ThrowGiantSoap()
+    {
+        GameObject giantSoap = Instantiate(giantSoapPrefab, giantSoapSpawn.position, giantSoapSpawn.rotation);
+        Rigidbody2D rb = giantSoap.GetComponent<Rigidbody2D>();
+        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+        rb.velocity = direction * giantSoapSpeed;
+        float rotationDirection = transform.localScale.x > 0 ? -300f : 300f;
+        rb.angularVelocity = rotationDirection;
+
+        FindObjectOfType<GameManager>().SaveGiantSoapStatus(false);
+        hasGiantSoap = false;
+        UpdateSoapUI(false);
+    }
+
+    public void SetGiantSoapStatus(bool status)
+    {
+        hasGiantSoap = status;
+        UpdateSoapUI(status);
+    }
+
+    void UpdateSoapUI(bool active)
+    {
+        giantSoapUI.SetActive(active);
+    }
     private void HandleMovement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -265,6 +311,11 @@ public class PlayerController : MonoBehaviour
         //playerRb.velocity = Vector2.zero;
 
         playerRb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+    }
+
+    public bool HasGiantSoap()
+    {
+        return hasGiantSoap;
     }
     private void OnDrawGizmosSelected()
     {

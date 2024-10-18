@@ -366,6 +366,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+--- !u!1 &337694223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8142722292537192052, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 337694222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337694224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5837309911672040287, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
@@ -1049,6 +1054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: giantSoapUI
+      value: 
+      objectReference: {fileID: 337694223}
     - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: soapUI.Array.data[0]
       value: 

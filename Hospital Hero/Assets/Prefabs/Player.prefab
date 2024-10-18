@@ -69,6 +69,7 @@ Transform:
   - {fileID: 287439870822492632}
   - {fileID: 1952966535464867941}
   - {fileID: 5070438690134719350}
+  - {fileID: 8930859563745999572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &401897306806264007
@@ -226,6 +227,11 @@ MonoBehaviour:
   shurikenSpeed: 20
   maxSoap: 5
   soapReloadTime: 3
+  giantSoapPrefab: {fileID: 8629637755336338924, guid: a8b802f1ad3bb414ba36cf47cc9e1a68, type: 3}
+  giantSoapUI: {fileID: 0}
+  hasGiantSoap: 0
+  giantSoapSpeed: 20
+  giantSoapSpawn: {fileID: 8930859563745999572}
   soapUI:
   - {fileID: 0}
   - {fileID: 0}
@@ -299,6 +305,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.269, y: -0.927, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 137006141051199244}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3988580976690227463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8930859563745999572}
+  m_Layer: 0
+  m_Name: GiantSoapSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8930859563745999572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988580976690227463}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.01, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

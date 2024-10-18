@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2565695936370116366}
   - component: {fileID: 3562333172393294705}
   - component: {fileID: 445919512240484762}
-  - component: {fileID: -8238242676391675575}
+  - component: {fileID: 6460859661334873673}
   m_Layer: 0
   m_Name: BigSoap
   m_TagString: Untagged
@@ -155,11 +155,11 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8238242676391675575
+--- !u!114 &6460859661334873673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,11 +168,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8629637755336338924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd1effb713993044596245c386572da4, type: 3}
+  m_Script: {fileID: 11500000, guid: 982d9226f1572a746ba21c2fb6ce8051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  maxDistance: 15
+  damage: 50
+  maxDistance: 20
+  maxHits: 2
   bubblePrefab: {fileID: 7056565640057605151, guid: b5e6765574912f544be43ba67bb2e86f, type: 3}
   bubbleSpawnInterval: 0.1
   bubbleSpawnRadius: 0.5

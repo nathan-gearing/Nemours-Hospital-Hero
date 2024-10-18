@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private Health playerHealth;
     public float deathAnimationDuration = 3.0f;
     private const string LevelKey = "CurrentLevel";
-   
+    private const string GiantSoapKey = "HasGiantSoap";
     public int currentLevel;
     
     
@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
         enemyAi = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyAI>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
+        bool hasGiantSoap = PlayerPrefs.GetInt(GiantSoapKey, 0) == 1;
+        playerController.SetGiantSoapStatus(hasGiantSoap);
+
         if (SceneManager.GetActiveScene().buildIndex != currentLevel)
         {
             SceneManager.LoadScene(currentLevel);
@@ -44,11 +47,13 @@ public class GameManager : MonoBehaviour
     }
 public void LoadLevel(int levelIndex)
     {
-
+        bool hasGiantSoap = playerController.HasGiantSoap();
         playerHealth.SavePlayerHealth();
         Debug.Log("Setting level to: " + levelIndex);
         PlayerPrefs.SetInt(LevelKey, levelIndex);
+        PlayerPrefs.SetInt(GiantSoapKey, hasGiantSoap ? 1 : 0);
         PlayerPrefs.Save();
+
 
         Debug.Log("Loading Level: " + levelIndex);
         SceneManager.LoadScene(levelIndex);
@@ -103,7 +108,14 @@ public void LoadLevel(int levelIndex)
     {
         PlayerPrefs.SetInt(LevelKey, 0);
         PlayerPrefs.DeleteKey("PlayerHealth");
+        PlayerPrefs.DeleteKey(GiantSoapKey);
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
+    }
+
+    public void SaveGiantSoapStatus(bool hasGiantSoap)
+    {
+        PlayerPrefs.SetInt(GiantSoapKey, hasGiantSoap ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }

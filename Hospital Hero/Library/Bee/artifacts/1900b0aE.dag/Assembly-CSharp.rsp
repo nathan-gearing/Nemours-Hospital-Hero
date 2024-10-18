@@ -366,6 +366,7 @@
 "Assets/Scripts/Interactables/Interactable.cs"
 "Assets/Scripts/Persist/CamPersist.cs"
 "Assets/Scripts/Persist/MusicPlayer.cs"
+"Assets/Scripts/Player/BigSoap.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/Player/Shuriken.cs"
 "Assets/Scripts/UI/EnemyUI.cs"

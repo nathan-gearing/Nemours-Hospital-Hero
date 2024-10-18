@@ -602,6 +602,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
+      propertyPath: giantSoapUI
+      value: 
+      objectReference: {fileID: 2129242778}
+    - target: {fileID: 193108728141310758, guid: 2432c82b86cebdb4da3ab04ac63e5cb7, type: 3}
       propertyPath: soapUI.Array.data[0]
       value: 
       objectReference: {fileID: 1360558509}
@@ -744,6 +748,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+--- !u!1 &2129242778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8142722292537192052, guid: 521f77f81b5e22845a260a31d4fb4251, type: 3}
+  m_PrefabInstance: {fileID: 2129242777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
