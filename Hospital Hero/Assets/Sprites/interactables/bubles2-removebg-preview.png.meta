@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: 835d338e937c1e045853fc1dcd114ac8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 232
+        width: 131
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5528c4439b6f243ba7aa46ecbb6bff
+      internalID: 1451313288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 222
+        width: 155
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1530de5cdb3bd5147a68fae826dedd56
+      internalID: 1230369209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 233
+        width: 135
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348ff50b4ccfabf4997ae4fa353fdfff
+      internalID: -820741867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 32
+        width: 126
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d131c809e9d1213428b6358debc59cec
+      internalID: 1765929691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 37
+        width: 130
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2f4b460d32b94428e72924141a4830
+      internalID: -769446893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubles2-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 63
+        width: 92
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d945779e71c2a3e4db1bb18ef7135024
+      internalID: 548219856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bubles2-removebg-preview_0: 1451313288
+      bubles2-removebg-preview_1: 1230369209
+      bubles2-removebg-preview_10: 1765929691
+      bubles2-removebg-preview_11: -769446893
+      bubles2-removebg-preview_12: 548219856
+      bubles2-removebg-preview_13: -175121435
+      bubles2-removebg-preview_14: -1480627257
+      bubles2-removebg-preview_15: 1768981960
+      bubles2-removebg-preview_16: 1179350870
+      bubles2-removebg-preview_17: 696743730
+      bubles2-removebg-preview_18: 409596682
+      bubles2-removebg-preview_19: 159577113
+      bubles2-removebg-preview_2: -820741867
+      bubles2-removebg-preview_20: 1343935451
+      bubles2-removebg-preview_21: 2141009052
+      bubles2-removebg-preview_22: -2017709517
+      bubles2-removebg-preview_23: 1120769440
+      bubles2-removebg-preview_24: -643425275
+      bubles2-removebg-preview_25: 1326718827
+      bubles2-removebg-preview_26: 320624251
+      bubles2-removebg-preview_27: 97770224
+      bubles2-removebg-preview_28: 88163271
+      bubles2-removebg-preview_29: -522420012
+      bubles2-removebg-preview_3: 403538895
+      bubles2-removebg-preview_30: -714547445
+      bubles2-removebg-preview_31: -81356931
+      bubles2-removebg-preview_32: 1488353792
+      bubles2-removebg-preview_33: 1041656374
+      bubles2-removebg-preview_34: -1167173281
+      bubles2-removebg-preview_35: 1801400401
+      bubles2-removebg-preview_36: 1662659073
+      bubles2-removebg-preview_37: -465666376
+      bubles2-removebg-preview_4: 1409474351
+      bubles2-removebg-preview_5: 1444174211
+      bubles2-removebg-preview_6: -946854077
+      bubles2-removebg-preview_7: -507080320
+      bubles2-removebg-preview_8: -124016356
+      bubles2-removebg-preview_9: 126563622
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
