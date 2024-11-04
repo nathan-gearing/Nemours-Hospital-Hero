@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 337
+  controlID: 51
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 338
+  controlID: 52
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 210
+  controlID: 19
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 244
+  controlID: 53
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,8 +267,8 @@ MonoBehaviour:
     y: 0
     width: 336
     height: 581
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -768,7 +768,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 10}
+      snapOffset: {x: 48, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
@@ -826,9 +826,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.700566, y: -0.117778555, z: -0.032876458}
+    m_Target: {x: 6.128159, y: 1.1541471, z: -0.13256086}
     speed: 2
-    m_Value: {x: 4.700566, y: -0.117778555, z: -0.032876458}
+    m_Value: {x: 6.128159, y: 1.1541471, z: -0.13256086}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -878,9 +878,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.301829
+    m_Target: 15.270239
     speed: 2
-    m_Value: 5.301829
+    m_Value: 15.270239
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1178,9 +1178,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be900000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ec7dffffc284ffffd284ffff6288ffffd888ffffda88ffff5c8afffff28affff7a93ffff9e93ffff609bffffea9bffff28f9ffff98f9ffff
+      m_ExpandedIDs: 6013ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1249,7 +1249,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Hospital
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1258,14 +1258,15 @@ MonoBehaviour:
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Dev\Unity\projects\Nemours-Hospital-Hero\Hospital Hero
+  m_LastProjectPath: C:\Users\natha\OneDrive\Dev\Unity\projects\Nemours-Hospital-Hero\Hospital
+    Hero
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e67a0000
     m_LastClickedID: 31462
-    m_ExpandedIDs: 000000009a5b00009c5b000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000001c060000540600005c060000ec06000010070000180700001c07000038070000480700005807000088070000a807000078090000f0090000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1290,10 +1291,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 240}
+    scrollPos: {x: 0, y: 60}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000009a5b0000a05b0000b05b00009090000000ca9a3bffffff7f
+    m_ExpandedIDs: ffffffff000000001c060000540600005c060000ec06000010070000180700001c07000038070000480700005807000088070000a807000078090000f0090000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
