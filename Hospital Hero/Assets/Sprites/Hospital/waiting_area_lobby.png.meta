@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,700 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: waiting_area_lobby_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 159
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1d3a45c76296545a8b0eea65b9f98d
+      internalID: -558368211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fc69227b4fe5845b964f9fc2c70ea7
+      internalID: -552742917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 127
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28d42791a2e8e048ae16e11a4976b92
+      internalID: 604232908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 95
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b558ddb8fa91b84d8dedf3e9523bf57
+      internalID: 1829223874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 95
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01fefa43601d014cb3f3b98de071499
+      internalID: 188787300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 111
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd7e841033629a4f88c819b358c3eb0
+      internalID: 337179319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 111
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e352bed2c54f49045ad7f480fdbcb1cd
+      internalID: -178640140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 111
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc84818117bec9f40a04f4facfca129f
+      internalID: -2134963554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_8
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 111
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01df4dfcbd120874b9098a9847a80721
+      internalID: -340530960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_9
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 95
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1625ce8be515da849817fd1105503b85
+      internalID: -725472426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_10
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 95
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6385a12de3e41524ab42bb9cb1fd36e5
+      internalID: 238321641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 95
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79021b23cface34c9791caeaee45265
+      internalID: -1233381689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_12
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 95
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6148f366d6d9b714b8f9e00bcf2a965b
+      internalID: 1335425488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 63
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ef3d8d7e18297418c64783fb47a3a5
+      internalID: -606305330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 79
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fad1203dbe5fa42848ac1ce194f595
+      internalID: -1873893251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_15
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 79
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bf3d1ce13583c45b180ebf8b816d1c
+      internalID: 409944741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 31
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be05c43913101af40a938a13ce9b55ce
+      internalID: 362736834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 63
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e9d7ab838f83040aa502bcf0208d68
+      internalID: -439506721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 63
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35638cbeb6c0b754687570d0c8ab1206
+      internalID: 369644846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 63
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ac75a67d3d56a4c9d3b7e259745978
+      internalID: 931970046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 31
+        width: 40
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2f2d4056503c340a72ddadd896985e
+      internalID: 486243365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 31
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791afc30c1a08ca4fa7fc41186a92942
+      internalID: -1456251652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_22
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 33
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794d1726026cbd442b7a52c2c6d915de
+      internalID: 1672451701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7efcae5ac7afdf4083e8a0aff12f56f
+      internalID: 2006223369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9deee052f63e9847b5ac9ee53decdfc
+      internalID: 132075266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832230a4b7356e141af94afbe66e8500
+      internalID: 217975872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4517b074f74bf4280121a7dc1f0eaa
+      internalID: 222360850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_27
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 127
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f2d9fa7be75434fb1ff04c52d93bc3
+      internalID: 849446794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 31
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f80345044cffc43971cebb980c48ab
+      internalID: 111767311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_29
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 78
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659184c19a501884595ff0e9c2943eaf
+      internalID: 599410986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_30
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 78
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700435301d70ec94f81778fa22e42cd1
+      internalID: -178764021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_31
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 78
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd4cc01310a0e349a5bde7fad757f7d
+      internalID: -618186028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiting_area_lobby_32
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 78
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e762e132c003634fbec838403874316
+      internalID: 1612963350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +799,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waiting_area_lobby_0: -558368211
+      waiting_area_lobby_1: -552742917
+      waiting_area_lobby_10: 238321641
+      waiting_area_lobby_11: -1233381689
+      waiting_area_lobby_12: 1335425488
+      waiting_area_lobby_13: -606305330
+      waiting_area_lobby_14: -1873893251
+      waiting_area_lobby_15: 409944741
+      waiting_area_lobby_16: 362736834
+      waiting_area_lobby_17: -439506721
+      waiting_area_lobby_18: 369644846
+      waiting_area_lobby_19: 931970046
+      waiting_area_lobby_2: 604232908
+      waiting_area_lobby_20: 486243365
+      waiting_area_lobby_21: -1456251652
+      waiting_area_lobby_22: 1672451701
+      waiting_area_lobby_23: 2006223369
+      waiting_area_lobby_24: 132075266
+      waiting_area_lobby_25: 217975872
+      waiting_area_lobby_26: 222360850
+      waiting_area_lobby_27: 849446794
+      waiting_area_lobby_28: 111767311
+      waiting_area_lobby_29: 599410986
+      waiting_area_lobby_3: 1829223874
+      waiting_area_lobby_30: -178764021
+      waiting_area_lobby_31: -618186028
+      waiting_area_lobby_32: 1612963350
+      waiting_area_lobby_4: 188787300
+      waiting_area_lobby_5: 337179319
+      waiting_area_lobby_6: -178640140
+      waiting_area_lobby_7: -2134963554
+      waiting_area_lobby_8: -340530960
+      waiting_area_lobby_9: -725472426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
