@@ -6,7 +6,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
-    
+    public TextMeshProUGUI introText;
 
     private void Start()
     {

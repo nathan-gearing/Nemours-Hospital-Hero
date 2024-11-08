@@ -115,8 +115,8 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F) && availableSoap > 0)
             {
-                ThrowSoap();
-                
+                //ThrowSoap();
+                animator.SetTrigger("throw");
 
             }
         
