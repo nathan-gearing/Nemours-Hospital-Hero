@@ -814,9 +814,9 @@ TextureImporter:
       name: exteriors_35
       rect:
         serializedVersion: 2
-        x: 160
+        x: 161
         y: 224
-        width: 48
+        width: 46
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -836,9 +836,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 209
-        y: 226
-        width: 31
-        height: 29
+        y: 228
+        width: 29
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -856,10 +856,10 @@ TextureImporter:
       name: exteriors_37
       rect:
         serializedVersion: 2
-        x: 240
-        y: 241
-        width: 31
-        height: 14
+        x: 241
+        y: 243
+        width: 30
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -877,10 +877,10 @@ TextureImporter:
       name: exteriors_38
       rect:
         serializedVersion: 2
-        x: 241
-        y: 210
-        width: 31
-        height: 29
+        x: 242
+        y: 211
+        width: 28
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -900,8 +900,8 @@ TextureImporter:
         serializedVersion: 2
         x: 209
         y: 210
-        width: 31
-        height: 14
+        width: 30
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1042,7 +1042,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: exteriors_47
+      name: exteriors_
       rect:
         serializedVersion: 2
         x: 80
@@ -1281,7 +1281,7 @@ TextureImporter:
         width: 12
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1289,6 +1289,111 @@ TextureImporter:
       bones: []
       spriteID: 580eb4a73dde7374fa38c8c69bfeaf08
       internalID: 513776696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exteriors_57
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 344
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a356200218902d847846e67d13355eac
+      internalID: 1200789665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exteriors_58
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 339
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8015dbd20f12b54a9385e241151c0d5
+      internalID: 846858691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exteriors_59
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 339
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde76d5a4b8472848b5854ab272db0ba
+      internalID: 1717889967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exteriors_60
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 346
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947d94edc78e5b942b01f0b9a106f6b3
+      internalID: 1670443585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exteriors_61
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 337
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ccc11fca296aa4fa71c38811b5e761
+      internalID: -1782716093
       vertices: []
       indices: 
       edges: []
@@ -1304,6 +1409,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      exteriors_: -635245091
       exteriors_0: -665626060
       exteriors_1: 267922745
       exteriors_10: 879509635
@@ -1346,7 +1452,6 @@ TextureImporter:
       exteriors_44: 1670854105
       exteriors_45: 675197406
       exteriors_46: -1423116920
-      exteriors_47: -635245091
       exteriors_48: -639076574
       exteriors_49: 132653683
       exteriors_5: -744845934
@@ -1357,7 +1462,12 @@ TextureImporter:
       exteriors_54: 350183652
       exteriors_55: 979363940
       exteriors_56: 513776696
+      exteriors_57: 1200789665
+      exteriors_58: 846858691
+      exteriors_59: 1717889967
       exteriors_6: 612681041
+      exteriors_60: 1670443585
+      exteriors_61: -1782716093
       exteriors_7: 2052326032
       exteriors_8: 8521768
       exteriors_9: -1653489475

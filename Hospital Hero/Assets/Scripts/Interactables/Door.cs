@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Door : Interactable
@@ -7,6 +8,7 @@ public class Door : Interactable
     public float promptTime = 2f;
     public float loadTime = 2.5f;
     private UIManager manager;
+    public TextMeshProUGUI promptText2;
     private GameManager gM;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,14 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        manager.DisplayPrompt("<b>Now to Final Level</b>", promptTime);
-        gM.RequestLevelTransition(2, loadTime);
+        manager.DisplayPrompt(promptText2, "Have fun", promptTime);
+        gM.RequestLevelTransition(1, loadTime);
         Destroy(gameObject);
+        
     }
 
     protected override string GetInteractPrompt()
     {
-        return "Press I to open the door";
+        return "Press I to open the door\nTo start your adventure";
     }
 }
