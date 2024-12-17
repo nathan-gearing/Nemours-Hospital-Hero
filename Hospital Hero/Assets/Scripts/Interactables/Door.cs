@@ -23,7 +23,7 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        manager.DisplayPrompt(promptText2, "Have fun", promptTime);
+        manager.DisplayPrompt(promptText2, "Goodluck!", promptTime);
         gM.RequestLevelTransition(1, loadTime);
         Destroy(gameObject);
         

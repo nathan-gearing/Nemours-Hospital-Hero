@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5;
     private bool facingRight = true;
     public float maxSpeed = 10f;
+    public float verticalVelocity;
    
 
     public Transform groundCheck;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public float knockBackDuration = 0.5f;
     private float knockBackTimer;
     private bool isKnockedBack = false;
+   
 
     private void Start()
     {
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        verticalVelocity = playerRb.velocity.y;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundlayer);
         animator.SetBool("isGrounded", isGrounded);
 
@@ -203,6 +206,14 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", false);
+        }
+        if (!isGrounded && verticalVelocity < -7)
+        {
+            playerRb.gravityScale = 5.5f;
+        }
+        else
+        {
+            playerRb.gravityScale = 1.5f;
         }
     }
 

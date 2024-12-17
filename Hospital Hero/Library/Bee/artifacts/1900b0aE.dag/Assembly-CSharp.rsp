@@ -364,6 +364,7 @@
 "Assets/Scripts/Health/HealthPickup.cs"
 "Assets/Scripts/Interactables/Collectible.cs"
 "Assets/Scripts/Interactables/Door.cs"
+"Assets/Scripts/Interactables/endCollectible.cs"
 "Assets/Scripts/Interactables/Interactable.cs"
 "Assets/Scripts/Interactables/pitCollectible.cs"
 "Assets/Scripts/Interactables/Prompts/CollectibleIntro.cs"
